@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_rtx_item_rules_and_services",
+  "info": {
+    "displayName": "rules_and_services",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string",
+      "required": true
+    },
+    "markdown": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

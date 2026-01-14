@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_discipline_disciplines",
+  "info": {
+    "displayName": "discipline"
+  },
+  "options": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "definition": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

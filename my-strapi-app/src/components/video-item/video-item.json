@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_video_item_video_items",
+  "info": {
+    "displayName": "video-item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "video_id": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

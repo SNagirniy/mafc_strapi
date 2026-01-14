@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_consultation_consultations",
+  "info": {
+    "displayName": "consultation"
+  },
+  "options": {},
+  "attributes": {
+    "discipline": {
+      "type": "string",
+      "required": true
+    },
+    "day": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "classroom": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

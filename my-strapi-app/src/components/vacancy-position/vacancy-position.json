@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_vacancy_position_vacancy_positions",
+  "info": {
+    "displayName": "vacancy_position"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "salary": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

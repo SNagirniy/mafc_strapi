@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "e_libraries",
+  "info": {
+    "singularName": "e-library",
+    "pluralName": "e-libraries",
+    "displayName": "e_library"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link-item.link-item",
+      "required": true
+    },
+    "profession": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::profession.profession"
+    }
+  }
+}

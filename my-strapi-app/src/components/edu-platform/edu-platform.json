@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_edu_platform_edu_platforms",
+  "info": {
+    "displayName": "edu_platform",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "deskription": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "login_link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link-item.link-item",
+      "required": true
+    },
+    "ref_link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link-item.link-item",
+      "required": true
+    }
+  }
+}

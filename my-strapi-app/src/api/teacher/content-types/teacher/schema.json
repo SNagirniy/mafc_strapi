@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teachers",
+  "info": {
+    "singularName": "teacher",
+    "pluralName": "teachers",
+    "displayName": "teacher"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "teacher_info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contacts",
+      "required": true
+    },
+    "consultations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "consultation.consultation"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "teachers": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject-commissions-list.subject-commissions-list",
+      "inversedBy": "members"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "nmts",
+  "info": {
+    "singularName": "nmt",
+    "pluralName": "nmts",
+    "displayName": "nmt"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nmt_link_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::nmt-page.nmt-page"
+    }
+  }
+}

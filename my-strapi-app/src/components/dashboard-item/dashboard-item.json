@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_dashboard_item_dashboard_items",
+  "info": {
+    "displayName": "dashboard_item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

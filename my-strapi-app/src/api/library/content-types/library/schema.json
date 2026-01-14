@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "libraries",
+  "info": {
+    "singularName": "library",
+    "pluralName": "libraries",
+    "displayName": "library",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "page_title": {
+      "type": "string"
+    },
+    "dashboard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "dashboard-item.dashboard-item"
+    },
+    "rules": {
+      "displayName": "rules_and_services",
+      "type": "component",
+      "repeatable": true,
+      "component": "rtx-item.rules-and-services"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "rtx-item.rules-and-services"
+    },
+    "work_schedule": {
+      "type": "component",
+      "repeatable": true,
+      "component": "dashboard-item.dashboard-item"
+    }
+  }
+}

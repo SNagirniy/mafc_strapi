@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "your_safety_pages",
+  "info": {
+    "singularName": "your-safety-page",
+    "pluralName": "your-safety-pages",
+    "displayName": "your_safety_page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "video_item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "video-item.video-item"
+    }
+  }
+}

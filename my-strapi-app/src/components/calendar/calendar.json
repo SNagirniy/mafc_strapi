@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_calendar_calendars",
+  "info": {
+    "displayName": "calendar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "stage": {
+      "type": "string",
+      "required": true
+    },
+    "main_set_date": {
+      "type": "string",
+      "required": true
+    },
+    "additional_set_date": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

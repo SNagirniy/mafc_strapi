@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "administration_pages",
+  "info": {
+    "singularName": "administration-page",
+    "pluralName": "administration-pages",
+    "displayName": "AdministrationPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "administrations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::administration.administration"
+    },
+    "organization_structure": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "administration_google_drive_folderID": {
+      "type": "string"
+    }
+  }
+}

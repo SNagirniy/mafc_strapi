@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "sareer_pages",
+  "info": {
+    "singularName": "sareer-page",
+    "pluralName": "sareer-pages",
+    "displayName": "career_page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "page_title": {
+      "type": "string",
+      "required": true
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

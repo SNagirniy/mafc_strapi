@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "extracurricular_activities_pages",
+  "info": {
+    "singularName": "extracurricular-activities-page",
+    "pluralName": "extracurricular-activities-pages",
+    "displayName": "extracurricular__activities_page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "extracurricular_activities_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::extracurricular-activities-list.extracurricular-activities-list"
+    }
+  }
+}

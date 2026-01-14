@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extracurricular_activities_lists",
+  "info": {
+    "singularName": "extracurricular-activities-list",
+    "pluralName": "extracurricular-activities-lists",
+    "displayName": "extracurricular_activities_list"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "activity": {
+      "type": "component",
+      "repeatable": false,
+      "component": "extracurricular-activity.extracurricular-activity",
+      "required": true
+    }
+  }
+}

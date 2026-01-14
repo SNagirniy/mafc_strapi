@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "distance_learning_pages",
+  "info": {
+    "singularName": "distance-learning-page",
+    "pluralName": "distance-learning-pages",
+    "displayName": "distance_learning_page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "edu_platform": {
+      "type": "component",
+      "repeatable": false,
+      "component": "edu-platform.edu-platform",
+      "required": true
+    },
+    "video_section": {
+      "type": "component",
+      "repeatable": true,
+      "component": "video-section.video-section"
+    },
+    "form_link": {
+      "type": "string"
+    }
+  }
+}

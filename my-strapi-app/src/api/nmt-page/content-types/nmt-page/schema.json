@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nmt_pages",
+  "info": {
+    "singularName": "nmt-page",
+    "pluralName": "nmt-pages",
+    "displayName": "nmt_link_list",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link-item.link-item"
+    },
+    "icon": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subject_commissions_lists",
+  "info": {
+    "singularName": "subject-commissions-list",
+    "pluralName": "subject-commissions-lists",
+    "displayName": "subject_commissions_list",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::teacher.teacher",
+      "mappedBy": "teachers"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    }
+  }
+}

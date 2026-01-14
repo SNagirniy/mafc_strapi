@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "common_pools",
+  "info": {
+    "singularName": "common-pool",
+    "pluralName": "common-pools",
+    "displayName": "common_pool"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "pool": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pool.pool",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts_pages",
+  "info": {
+    "singularName": "contacts-page",
+    "pluralName": "contacts-pages",
+    "displayName": "contacts_data",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "side_title": {
+      "type": "string",
+      "required": true
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "formTitles": {
+      "displayName": "formTitles",
+      "type": "component",
+      "repeatable": false,
+      "component": "form-titles.form-titles"
+    },
+    "contact": {
+      "displayName": "contacts",
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.contacts"
+    },
+    "page": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

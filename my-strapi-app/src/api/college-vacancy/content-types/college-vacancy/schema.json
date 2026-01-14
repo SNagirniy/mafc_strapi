@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "college_vacancies",
+  "info": {
+    "singularName": "college-vacancy",
+    "pluralName": "college-vacancies",
+    "displayName": "college_vacancy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "page_title": {
+      "type": "string",
+      "required": true
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    }
+  }
+}

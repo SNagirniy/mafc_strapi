@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "bank_account_pages",
+  "info": {
+    "singularName": "bank-account-page",
+    "pluralName": "bank-account-pages",
+    "displayName": "BankAccountPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "account": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-account.service-account"
+    }
+  }
+}

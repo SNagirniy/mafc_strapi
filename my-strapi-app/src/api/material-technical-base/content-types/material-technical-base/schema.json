@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "material_technical_bases",
+  "info": {
+    "singularName": "material-technical-base",
+    "pluralName": "material-technical-bases",
+    "displayName": "material_technical_base",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "characteristic": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

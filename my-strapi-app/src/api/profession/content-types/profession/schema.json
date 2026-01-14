@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "professions",
+  "info": {
+    "singularName": "profession",
+    "pluralName": "professions",
+    "displayName": "profession",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "educational_program": {
+      "type": "string",
+      "required": true
+    },
+    "term_of_study": {
+      "type": "string",
+      "required": true
+    },
+    "tuition_fees": {
+      "type": "integer",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "discipline": {
+      "displayName": "discipline",
+      "type": "component",
+      "repeatable": false,
+      "component": "discipline.discipline"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "educational_program",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "pool": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pool.pool"
+    },
+    "google_drive_doc_folder_id": {
+      "type": "string",
+      "required": false
+    },
+    "speciality_rating_folder_id": {
+      "type": "string"
+    }
+  }
+}

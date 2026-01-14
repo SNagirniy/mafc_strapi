@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "domitory_pages",
+  "info": {
+    "singularName": "domitory-page",
+    "pluralName": "domitory-pages",
+    "displayName": "domitory_page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": false,
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

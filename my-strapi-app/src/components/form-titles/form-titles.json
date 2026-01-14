@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_form_titles_form_titles",
+  "info": {
+    "displayName": "formTitles"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

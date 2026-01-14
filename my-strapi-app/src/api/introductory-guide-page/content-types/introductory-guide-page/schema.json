@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "introductory_guide_pages",
+  "info": {
+    "singularName": "introductory-guide-page",
+    "pluralName": "introductory-guide-pages",
+    "displayName": "Introductory_guide_page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "professions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::profession.profession"
+    },
+    "entrance_documents_list": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

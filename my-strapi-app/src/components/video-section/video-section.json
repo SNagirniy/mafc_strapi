@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_video_section_video_sections",
+  "info": {
+    "displayName": "video_section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "audience": {
+      "type": "enumeration",
+      "enum": [
+        "students,",
+        "teachers"
+      ],
+      "required": true,
+      "default": "students,"
+    },
+    "ids": {
+      "type": "component",
+      "repeatable": true,
+      "component": "video-item.video-item"
+    }
+  }
+}
