@@ -1,25 +1,50 @@
 {
   "collectionName": "components_contact_contacts",
   "info": {
-    "displayName": "contacts"
+    "displayName": "contacts",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "name": {
       "type": "string"
     },
-    "adress": {
-      "type": "string"
-    },
-    "mail": {
-      "type": "email"
-    },
-    "phone": {
-      "type": "json"
-    },
     "position": {
       "type": "string",
       "required": true
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "education": {
+      "displayName": "teacher_education",
+      "type": "component",
+      "repeatable": true,
+      "component": "teacher-education.teacher-education"
+    },
+    "specialty": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "integer"
+    },
+    "disciplines": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "teacher_experience": {
+      "displayName": "teacher_experience",
+      "type": "component",
+      "repeatable": true,
+      "component": "teacher-experience.teacher-experience"
+    },
+    "professional_interests": {
+      "type": "string"
+    },
+    "credo": {
+      "type": "string"
     }
   }
 }

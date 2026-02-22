@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "training_and_production_workshops",
+  "info": {
+    "singularName": "training-and-production-workshop",
+    "pluralName": "training-and-production-workshops",
+    "displayName": "TrainingAndProductionWorkshop"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

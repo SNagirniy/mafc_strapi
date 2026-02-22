@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "hr_department_pages",
+  "info": {
+    "singularName": "hr-department-page",
+    "pluralName": "hr-department-pages",
+    "displayName": "HR_department_page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

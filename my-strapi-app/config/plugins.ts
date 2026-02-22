@@ -14,4 +14,12 @@ export default ({ env }) => ({
       },
     },
   },
+  'content-manager': {
+    config: {
+      pagination: {
+        defaultLimit: 50,
+        maxLimit: 100,
+      },
+    },
+  },
 });

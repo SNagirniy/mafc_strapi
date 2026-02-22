@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_image_width_title_image_width_titles",
+  "info": {
+    "displayName": "image_width_title"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

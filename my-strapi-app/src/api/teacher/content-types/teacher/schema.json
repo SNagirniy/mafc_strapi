@@ -4,7 +4,8 @@
   "info": {
     "singularName": "teacher",
     "pluralName": "teachers",
-    "displayName": "teacher"
+    "displayName": "teacher",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,24 +17,22 @@
       "component": "contact.contacts",
       "required": true
     },
-    "consultations": {
-      "type": "component",
-      "repeatable": true,
-      "component": "consultation.consultation"
-    },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": false
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "teachers": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::subject-commissions-list.subject-commissions-list",
       "inversedBy": "members"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

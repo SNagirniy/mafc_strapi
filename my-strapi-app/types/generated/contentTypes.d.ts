@@ -369,33 +369,33 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAdministrationPageAdministrationPage
+export interface ApiAccessibilityAndInclusiveLearningPageAccessibilityAndInclusiveLearningPage
   extends Struct.SingleTypeSchema {
-  collectionName: 'administration_pages';
+  collectionName: 'accessibility_and_inclusive_learning_pages';
   info: {
-    displayName: 'AdministrationPage';
-    pluralName: 'administration-pages';
-    singularName: 'administration-page';
+    displayName: 'AccessibilityAndInclusiveLearningPage';
+    pluralName: 'accessibility-and-inclusive-learning-pages';
+    singularName: 'accessibility-and-inclusive-learning-page';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    administration_google_drive_folderID: Schema.Attribute.String;
-    administrations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::administration.administration'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    images: Schema.Attribute.Media<'images', true>;
+    insructions: Schema.Attribute.Component<
+      'rtx-item.rules-and-services',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::administration-page.administration-page'
+      'api::accessibility-and-inclusive-learning-page.accessibility-and-inclusive-learning-page'
     > &
       Schema.Attribute.Private;
-    organization_structure: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -403,14 +403,14 @@ export interface ApiAdministrationPageAdministrationPage
   };
 }
 
-export interface ApiAdministrationAdministration
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'administrations';
+export interface ApiAdministrationPageAdministrationPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'administration_pages';
   info: {
     description: '';
-    displayName: 'administration';
-    pluralName: 'administrations';
-    singularName: 'administration';
+    displayName: 'ManagementSystemPage';
+    pluralName: 'administration-pages';
+    singularName: 'administration-page';
   };
   options: {
     draftAndPublish: true;
@@ -419,15 +419,23 @@ export interface ApiAdministrationAdministration
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images'>;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::administration.administration'
+      'api::administration-page.administration-page'
     > &
       Schema.Attribute.Private;
+    organization_structure: Schema.Attribute.Media<'images'>;
+    page_title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    teacher_info: Schema.Attribute.Component<'contact.contacts', false>;
+    teachers: Schema.Attribute.Relation<'oneToMany', 'api::teacher.teacher'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -488,6 +496,35 @@ export interface ApiAdmissionCalendarAdmissionCalendar
   };
 }
 
+export interface ApiAnimalHusbandryLaboratoryPageAnimalHusbandryLaboratoryPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'animal_husbandry_laboratory_pages';
+  info: {
+    displayName: 'AnimalHusbandryLaboratoryPage';
+    pluralName: 'animal-husbandry-laboratory-pages';
+    singularName: 'animal-husbandry-laboratory-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::animal-husbandry-laboratory-page.animal-husbandry-laboratory-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBankAccountPageBankAccountPage
   extends Struct.SingleTypeSchema {
   collectionName: 'bank_account_pages';
@@ -521,6 +558,36 @@ export interface ApiBankAccountPageBankAccountPage
   };
 }
 
+export interface ApiCareerOrientationAndImageFormationCareerOrientationAndImageFormation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'career_orientation_and_image_formations';
+  info: {
+    displayName: 'CareerOrientationAndImageFormation';
+    pluralName: 'career-orientation-and-image-formations';
+    singularName: 'career-orientation-and-image-formation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-orientation-and-image-formation.career-orientation-and-image-formation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -543,6 +610,72 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       'api::category.category'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiClassroomAndLaboratoryClassroomAndLaboratory
+  extends Struct.SingleTypeSchema {
+  collectionName: 'classroom_and_laboratories';
+  info: {
+    description: '';
+    displayName: 'ClassroomAndLaboratory';
+    pluralName: 'classroom-and-laboratories';
+    singularName: 'classroom-and-laboratory';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::classroom-and-laboratory.classroom-and-laboratory'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCollegeHistoryPageCollegeHistoryPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'college_history_pages';
+  info: {
+    displayName: 'CollegeHistoryPage';
+    pluralName: 'college-history-pages';
+    singularName: 'college-history-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::college-history-page.college-history-page'
+    > &
+      Schema.Attribute.Private;
+    markdown: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    page_title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -693,6 +826,64 @@ export interface ApiContactsPageContactsPage
   };
 }
 
+export interface ApiDepartmentPageDepartmentPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'department_pages';
+  info: {
+    displayName: 'DepartmentPage';
+    pluralName: 'department-pages';
+    singularName: 'department-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::department-page.department-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDevelopmentOfAcademicIntegrityDevelopmentOfAcademicIntegrity
+  extends Struct.SingleTypeSchema {
+  collectionName: 'development_of_academic_integrities';
+  info: {
+    displayName: 'DevelopmentOfAcademicIntegrity';
+    pluralName: 'development-of-academic-integrities';
+    singularName: 'development-of-academic-integrity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::development-of-academic-integrity.development-of-academic-integrity'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDistanceLearningPageDistanceLearningPage
   extends Struct.SingleTypeSchema {
   collectionName: 'distance_learning_pages';
@@ -792,6 +983,95 @@ export interface ApiELibraryELibrary extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::profession.profession'
     >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEducationalAccountingEducationalAccounting
+  extends Struct.SingleTypeSchema {
+  collectionName: 'educational_accountings';
+  info: {
+    description: '';
+    displayName: 'educational_accounting';
+    pluralName: 'educational-accountings';
+    singularName: 'educational-accounting';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::educational-accounting.educational-accounting'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEducationalActivitiesPageEducationalActivitiesPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'educational_activities_pages';
+  info: {
+    displayName: 'EducationalActivitiesPage';
+    pluralName: 'educational-activities-pages';
+    singularName: 'educational-activities-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::educational-activities-page.educational-activities-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEnsuringTheQualityOfEducationPageEnsuringTheQualityOfEducationPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'ensuring_the_quality_of_education_pages';
+  info: {
+    description: '';
+    displayName: 'EnsuringTheQualityOfEducationPage';
+    pluralName: 'ensuring-the-quality-of-education-pages';
+    singularName: 'ensuring-the-quality-of-education-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ensuring-the-quality-of-education-page.ensuring-the-quality-of-education-page'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -966,6 +1246,35 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHrDepartmentPageHrDepartmentPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'hr_department_pages';
+  info: {
+    displayName: 'HR_department_page';
+    pluralName: 'hr-department-pages';
+    singularName: 'hr-department-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hr-department-page.hr-department-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiIntroductoryGuidePageIntroductoryGuidePage
   extends Struct.SingleTypeSchema {
   collectionName: 'introductory_guide_pages';
@@ -1018,6 +1327,10 @@ export interface ApiLibraryLibrary extends Struct.SingleTypeSchema {
     dashboard: Schema.Attribute.Component<
       'dashboard-item.dashboard-item',
       true
+    >;
+    e_libraries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::e-library.e-library'
     >;
     images: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1077,6 +1390,145 @@ export interface ApiMaterialTechnicalBaseMaterialTechnicalBase
   };
 }
 
+export interface ApiMemoryPageMemoryPage extends Struct.SingleTypeSchema {
+  collectionName: 'memory_pages';
+  info: {
+    description: '';
+    displayName: 'MemoryPage';
+    pluralName: 'memory-pages';
+    singularName: 'memory-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::memory-page.memory-page'
+    > &
+      Schema.Attribute.Private;
+    markdown: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    page_title: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Component<'video-item.video-item', true>;
+  };
+}
+
+export interface ApiMethodicalOfficePageMethodicalOfficePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'methodical_office_pages';
+  info: {
+    displayName: 'MethodicalOfficePage';
+    pluralName: 'methodical-office-pages';
+    singularName: 'methodical-office-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::methodical-office-page.methodical-office-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMissionAndGoalsPageMissionAndGoalsPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mission_and_goals_pages';
+  info: {
+    description: '';
+    displayName: 'MissionAndGoalsPage';
+    pluralName: 'mission-and-goals-pages';
+    singularName: 'mission-and-goals-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mission-and-goals-page.mission-and-goals-page'
+    > &
+      Schema.Attribute.Private;
+    markdown: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    page_title: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiModernWarMuseumModernWarMuseum
+  extends Struct.SingleTypeSchema {
+  collectionName: 'modern_war_museums';
+  info: {
+    displayName: 'ModernWarMuseum';
+    pluralName: 'modern-war-museums';
+    singularName: 'modern-war-museum';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::modern-war-museum.modern-war-museum'
+    > &
+      Schema.Attribute.Private;
+    markdown: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    page_title: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNewNew extends Struct.CollectionTypeSchema {
   collectionName: 'news';
   info: {
@@ -1096,7 +1548,10 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
           preset: 'defaultHtml';
         }
       >;
-    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1175,6 +1630,36 @@ export interface ApiNmtNmt extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPlantProductionLaboratoryPagePlantProductionLaboratoryPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'plant_production_laboratory_pages';
+  info: {
+    description: '';
+    displayName: 'PlantProductionLaboratoryPage';
+    pluralName: 'plant-production-laboratory-pages';
+    singularName: 'plant-production-laboratory-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plant-production-laboratory-page.plant-production-laboratory-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProfessionProfession extends Struct.CollectionTypeSchema {
   collectionName: 'professions';
   info: {
@@ -1220,6 +1705,7 @@ export interface ApiRegulatoryDocumentsPageRegulatoryDocumentsPage
   extends Struct.SingleTypeSchema {
   collectionName: 'regulatory_documents_pages';
   info: {
+    description: '';
     displayName: 'RegulatoryDocumentsPage';
     pluralName: 'regulatory-documents-pages';
     singularName: 'regulatory-documents-page';
@@ -1231,6 +1717,8 @@ export interface ApiRegulatoryDocumentsPageRegulatoryDocumentsPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    document_link_list: Schema.Attribute.Component<'link-item.link-item', true>;
+    google_drive_doc_folder_id: Schema.Attribute.String;
     license: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1238,8 +1726,8 @@ export interface ApiRegulatoryDocumentsPageRegulatoryDocumentsPage
       'api::regulatory-documents-page.regulatory-documents-page'
     > &
       Schema.Attribute.Private;
+    page_title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    regulatory_documents_google_drive_folderID: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1277,6 +1765,48 @@ export interface ApiSareerPageSareerPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSubjectCommissionPageSubjectCommissionPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'subject_commission_pages';
+  info: {
+    description: '';
+    displayName: 'SubjectCommissionPage';
+    pluralName: 'subject-commission-pages';
+    singularName: 'subject-commission-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    google_drive_doc_folder_id: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subject-commission-page.subject-commission-page'
+    > &
+      Schema.Attribute.Private;
+    page_title: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    subject_commissions_lists: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subject-commissions-list.subject-commissions-list'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSubjectCommissionsListSubjectCommissionsList
   extends Struct.CollectionTypeSchema {
   collectionName: 'subject_commissions_lists';
@@ -1294,6 +1824,7 @@ export interface ApiSubjectCommissionsListSubjectCommissionsList
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    google_drive_doc_folder_id: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1312,6 +1843,7 @@ export interface ApiSubjectCommissionsListSubjectCommissionsList
 export interface ApiTeacherTeacher extends Struct.CollectionTypeSchema {
   collectionName: 'teachers';
   info: {
+    description: '';
     displayName: 'teacher';
     pluralName: 'teachers';
     singularName: 'teacher';
@@ -1320,10 +1852,6 @@ export interface ApiTeacherTeacher extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    consultations: Schema.Attribute.Component<
-      'consultation.consultation',
-      true
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1334,6 +1862,7 @@ export interface ApiTeacherTeacher extends Struct.CollectionTypeSchema {
       'api::teacher.teacher'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     teacher_info: Schema.Attribute.Component<'contact.contacts', false> &
       Schema.Attribute.Required;
@@ -1347,11 +1876,72 @@ export interface ApiTeacherTeacher extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTrainingAndProductionActivityTrainingAndProductionActivity
+  extends Struct.SingleTypeSchema {
+  collectionName: 'training_and_production_activities';
+  info: {
+    description: '';
+    displayName: 'TrainingAndProductionActivity';
+    pluralName: 'training-and-production-activities';
+    singularName: 'training-and-production-activity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::training-and-production-activity.training-and-production-activity'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTrainingAndProductionWorkshopTrainingAndProductionWorkshop
+  extends Struct.SingleTypeSchema {
+  collectionName: 'training_and_production_workshops';
+  info: {
+    displayName: 'TrainingAndProductionWorkshop';
+    pluralName: 'training-and-production-workshops';
+    singularName: 'training-and-production-workshop';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::training-and-production-workshop.training-and-production-workshop'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiYourSafetyPageYourSafetyPage
   extends Struct.SingleTypeSchema {
   collectionName: 'your_safety_pages';
   info: {
-    displayName: 'your_safety_page';
+    description: '';
+    displayName: 'WorkSafetyPage';
     pluralName: 'your-safety-pages';
     singularName: 'your-safety-page';
   };
@@ -1362,6 +1952,11 @@ export interface ApiYourSafetyPageYourSafetyPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    data: Schema.Attribute.Component<'department.department', false>;
+    images: Schema.Attribute.Component<
+      'image-width-title.image-width-title',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1885,34 +2480,52 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::accessibility-and-inclusive-learning-page.accessibility-and-inclusive-learning-page': ApiAccessibilityAndInclusiveLearningPageAccessibilityAndInclusiveLearningPage;
       'api::administration-page.administration-page': ApiAdministrationPageAdministrationPage;
-      'api::administration.administration': ApiAdministrationAdministration;
       'api::admission-calendar.admission-calendar': ApiAdmissionCalendarAdmissionCalendar;
+      'api::animal-husbandry-laboratory-page.animal-husbandry-laboratory-page': ApiAnimalHusbandryLaboratoryPageAnimalHusbandryLaboratoryPage;
       'api::bank-account-page.bank-account-page': ApiBankAccountPageBankAccountPage;
+      'api::career-orientation-and-image-formation.career-orientation-and-image-formation': ApiCareerOrientationAndImageFormationCareerOrientationAndImageFormation;
       'api::category.category': ApiCategoryCategory;
+      'api::classroom-and-laboratory.classroom-and-laboratory': ApiClassroomAndLaboratoryClassroomAndLaboratory;
+      'api::college-history-page.college-history-page': ApiCollegeHistoryPageCollegeHistoryPage;
       'api::college-vacancy.college-vacancy': ApiCollegeVacancyCollegeVacancy;
       'api::common-pool.common-pool': ApiCommonPoolCommonPool;
       'api::company.company': ApiCompanyCompany;
       'api::contacts-page.contacts-page': ApiContactsPageContactsPage;
+      'api::department-page.department-page': ApiDepartmentPageDepartmentPage;
+      'api::development-of-academic-integrity.development-of-academic-integrity': ApiDevelopmentOfAcademicIntegrityDevelopmentOfAcademicIntegrity;
       'api::distance-learning-page.distance-learning-page': ApiDistanceLearningPageDistanceLearningPage;
       'api::domitory-page.domitory-page': ApiDomitoryPageDomitoryPage;
       'api::e-library.e-library': ApiELibraryELibrary;
+      'api::educational-accounting.educational-accounting': ApiEducationalAccountingEducationalAccounting;
+      'api::educational-activities-page.educational-activities-page': ApiEducationalActivitiesPageEducationalActivitiesPage;
+      'api::ensuring-the-quality-of-education-page.ensuring-the-quality-of-education-page': ApiEnsuringTheQualityOfEducationPageEnsuringTheQualityOfEducationPage;
       'api::extracurricular-activities-list.extracurricular-activities-list': ApiExtracurricularActivitiesListExtracurricularActivitiesList;
       'api::extracurricular-activities-page.extracurricular-activities-page': ApiExtracurricularActivitiesPageExtracurricularActivitiesPage;
       'api::graduator.graduator': ApiGraduatorGraduator;
       'api::hero-data.hero-data': ApiHeroDataHeroData;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::hr-department-page.hr-department-page': ApiHrDepartmentPageHrDepartmentPage;
       'api::introductory-guide-page.introductory-guide-page': ApiIntroductoryGuidePageIntroductoryGuidePage;
       'api::library.library': ApiLibraryLibrary;
       'api::material-technical-base.material-technical-base': ApiMaterialTechnicalBaseMaterialTechnicalBase;
+      'api::memory-page.memory-page': ApiMemoryPageMemoryPage;
+      'api::methodical-office-page.methodical-office-page': ApiMethodicalOfficePageMethodicalOfficePage;
+      'api::mission-and-goals-page.mission-and-goals-page': ApiMissionAndGoalsPageMissionAndGoalsPage;
+      'api::modern-war-museum.modern-war-museum': ApiModernWarMuseumModernWarMuseum;
       'api::new.new': ApiNewNew;
       'api::nmt-page.nmt-page': ApiNmtPageNmtPage;
       'api::nmt.nmt': ApiNmtNmt;
+      'api::plant-production-laboratory-page.plant-production-laboratory-page': ApiPlantProductionLaboratoryPagePlantProductionLaboratoryPage;
       'api::profession.profession': ApiProfessionProfession;
       'api::regulatory-documents-page.regulatory-documents-page': ApiRegulatoryDocumentsPageRegulatoryDocumentsPage;
       'api::sareer-page.sareer-page': ApiSareerPageSareerPage;
+      'api::subject-commission-page.subject-commission-page': ApiSubjectCommissionPageSubjectCommissionPage;
       'api::subject-commissions-list.subject-commissions-list': ApiSubjectCommissionsListSubjectCommissionsList;
       'api::teacher.teacher': ApiTeacherTeacher;
+      'api::training-and-production-activity.training-and-production-activity': ApiTrainingAndProductionActivityTrainingAndProductionActivity;
+      'api::training-and-production-workshop.training-and-production-workshop': ApiTrainingAndProductionWorkshopTrainingAndProductionWorkshop;
       'api::your-safety-page.your-safety-page': ApiYourSafetyPageYourSafetyPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

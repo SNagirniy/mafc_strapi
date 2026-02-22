@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "educational_accountings",
+  "info": {
+    "singularName": "educational-accounting",
+    "pluralName": "educational-accountings",
+    "displayName": "educational_accounting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

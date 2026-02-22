@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "career_orientation_and_image_formations",
+  "info": {
+    "singularName": "career-orientation-and-image-formation",
+    "pluralName": "career-orientation-and-image-formations",
+    "displayName": "CareerOrientationAndImageFormation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    }
+  }
+}

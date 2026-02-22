@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "training_and_production_activities",
+  "info": {
+    "singularName": "training-and-production-activity",
+    "pluralName": "training-and-production-activities",
+    "displayName": "TrainingAndProductionActivity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    }
+  }
+}

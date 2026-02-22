@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "animal_husbandry_laboratory_pages",
+  "info": {
+    "singularName": "animal-husbandry-laboratory-page",
+    "pluralName": "animal-husbandry-laboratory-pages",
+    "displayName": "AnimalHusbandryLaboratoryPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

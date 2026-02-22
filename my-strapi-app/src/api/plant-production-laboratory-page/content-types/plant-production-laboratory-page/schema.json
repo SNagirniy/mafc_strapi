@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "plant_production_laboratory_pages",
+  "info": {
+    "singularName": "plant-production-laboratory-page",
+    "pluralName": "plant-production-laboratory-pages",
+    "displayName": "PlantProductionLaboratoryPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

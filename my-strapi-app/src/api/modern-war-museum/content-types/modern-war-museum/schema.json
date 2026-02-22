@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "modern_war_museums",
+  "info": {
+    "singularName": "modern-war-museum",
+    "pluralName": "modern-war-museums",
+    "displayName": "ModernWarMuseum"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "page_title": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "methodical_office_pages",
+  "info": {
+    "singularName": "methodical-office-page",
+    "pluralName": "methodical-office-pages",
+    "displayName": "MethodicalOfficePage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

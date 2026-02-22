@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_department_departments",
+  "info": {
+    "displayName": "department",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "page_title": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "google_drive_doc_folder_id": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link-item.link-item"
+    }
+  }
+}

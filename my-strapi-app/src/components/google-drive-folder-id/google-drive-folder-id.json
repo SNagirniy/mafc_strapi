@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_google_drive_folder_id_google_drive_folder_ids",
+  "info": {
+    "displayName": "google_drive_folderId"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "folder_id": {
+      "type": "string"
+    }
+  }
+}

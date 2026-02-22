@@ -39,9 +39,9 @@
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "category": {
+    "categories": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::category.category"
     }
   }

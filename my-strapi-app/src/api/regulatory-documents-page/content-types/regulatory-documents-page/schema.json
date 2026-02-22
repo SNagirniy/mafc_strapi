@@ -4,20 +4,30 @@
   "info": {
     "singularName": "regulatory-documents-page",
     "pluralName": "regulatory-documents-pages",
-    "displayName": "RegulatoryDocumentsPage"
+    "displayName": "RegulatoryDocumentsPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "license": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "regulatory_documents_google_drive_folderID": {
+    "page_title": {
+      "type": "string"
+    },
+    "document_link_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link-item.link-item"
+    },
+    "google_drive_doc_folder_id": {
       "type": "string"
     }
   }

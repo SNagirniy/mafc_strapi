@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "accessibility_and_inclusive_learning_pages",
+  "info": {
+    "singularName": "accessibility-and-inclusive-learning-page",
+    "pluralName": "accessibility-and-inclusive-learning-pages",
+    "displayName": "AccessibilityAndInclusiveLearningPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "insructions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "rtx-item.rules-and-services"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "memory_pages",
+  "info": {
+    "singularName": "memory-page",
+    "pluralName": "memory-pages",
+    "displayName": "MemoryPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "page_title": {
+      "type": "string"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": true,
+      "component": "video-item.video-item"
+    },
+    "markdown": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

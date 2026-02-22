@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "educational_activities_pages",
+  "info": {
+    "singularName": "educational-activities-page",
+    "pluralName": "educational-activities-pages",
+    "displayName": "EducationalActivitiesPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_teacher_education_teacher_educations",
+  "info": {
+    "displayName": "teacher_education",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "institution": {
+      "type": "string"
+    }
+  }
+}

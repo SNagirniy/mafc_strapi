@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "classroom_and_laboratories",
+  "info": {
+    "singularName": "classroom-and-laboratory",
+    "pluralName": "classroom-and-laboratories",
+    "displayName": "ClassroomAndLaboratory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

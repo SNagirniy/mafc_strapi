@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "subject_commission_pages",
+  "info": {
+    "singularName": "subject-commission-page",
+    "pluralName": "subject-commission-pages",
+    "displayName": "SubjectCommissionPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "page_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "subject_commissions_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subject-commissions-list.subject-commissions-list"
+    },
+    "google_drive_doc_folder_id": {
+      "type": "string"
+    }
+  }
+}

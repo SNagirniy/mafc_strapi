@@ -4,7 +4,8 @@
   "info": {
     "singularName": "your-safety-page",
     "pluralName": "your-safety-pages",
-    "displayName": "your_safety_page"
+    "displayName": "WorkSafetyPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,6 +15,16 @@
       "type": "component",
       "repeatable": true,
       "component": "video-item.video-item"
+    },
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image-width-title.image-width-title"
     }
   }
 }

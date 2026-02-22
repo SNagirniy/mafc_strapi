@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_teacher_experience_teacher_experiences",
+  "info": {
+    "displayName": "teacher_experience",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "experience": {
+      "type": "string"
+    }
+  }
+}

@@ -25,6 +25,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category"
+    },
+    "google_drive_doc_folder_id": {
+      "type": "string"
     }
   }
 }

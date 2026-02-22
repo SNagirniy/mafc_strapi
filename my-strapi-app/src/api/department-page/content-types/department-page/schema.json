@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "department_pages",
+  "info": {
+    "singularName": "department-page",
+    "pluralName": "department-pages",
+    "displayName": "DepartmentPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "department.department"
+    }
+  }
+}

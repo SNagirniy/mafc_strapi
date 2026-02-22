@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "mission_and_goals_pages",
+  "info": {
+    "singularName": "mission-and-goals-page",
+    "pluralName": "mission-and-goals-pages",
+    "displayName": "MissionAndGoalsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "markdown": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "page_title": {
+      "type": "string"
+    }
+  }
+}

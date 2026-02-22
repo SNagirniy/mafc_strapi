@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "development_of_academic_integrities",
+  "info": {
+    "singularName": "development-of-academic-integrity",
+    "pluralName": "development-of-academic-integrities",
+    "displayName": "DevelopmentOfAcademicIntegrity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

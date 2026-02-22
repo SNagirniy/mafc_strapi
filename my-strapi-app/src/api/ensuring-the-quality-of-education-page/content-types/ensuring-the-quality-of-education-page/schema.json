@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "ensuring_the_quality_of_education_pages",
+  "info": {
+    "singularName": "ensuring-the-quality-of-education-page",
+    "pluralName": "ensuring-the-quality-of-education-pages",
+    "displayName": "EnsuringTheQualityOfEducationPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "department.department"
+    }
+  }
+}

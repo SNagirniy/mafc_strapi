@@ -4,25 +4,34 @@
   "info": {
     "singularName": "administration-page",
     "pluralName": "administration-pages",
-    "displayName": "AdministrationPage"
+    "displayName": "ManagementSystemPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "administrations": {
+    "teachers": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::administration.administration"
+      "target": "api::teacher.teacher"
     },
     "organization_structure": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "administration_google_drive_folderID": {
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "page_title": {
       "type": "string"
     }
   }
